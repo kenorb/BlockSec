@@ -1,17 +1,33 @@
   {
+    "author": "https://github.com/kenorb/BlockSec",
     "background": {
-      "scripts": ["background.js"],
+      "background_page": "pages/background.html",
+      "scripts": ["scripts/background.js"],
       "persistent": false
     },
+    "content_scripts": [
+        {
+            "matches": [
+            "https://*/*"
+            ],
+            "js": [
+                "scripts/contentScript.js"
+            ],
+            "run_at": "document_start",
+            "all_frames": false
+        }
+    ],
     "default_locale": "en",
-    "description": "Privacy extension to keep you safe.",
+    "description": "Privacy extension to keep your browsing safe.",
     "manifest_version": 2,
     "name": "BlockSec",
     "permissions": [
         "storage",
         "activeTab",
-        "webRequest",
         "notifications"
     ],
-    "version": "1.0"
+    "version": "1.0",
+    "web_accessible_resources": [
+        "pages/warning.html"
+    ]
   }
