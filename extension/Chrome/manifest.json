@@ -1,0 +1,17 @@
+  {
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "default_locale": "en",
+    "description": "Privacy extension to keep you safe.",
+    "manifest_version": 2,
+    "name": "BlockSec",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "webRequest",
+        "notifications"
+    ],
+    "version": "1.0"
+  }
