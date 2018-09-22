@@ -13,6 +13,7 @@ var extraInfoSpec = ['blocking'];
 // @refs: https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/webRequest/onHeadersReceived
 if (typeof browser !== "undefined") {
     log('TLS browser extension loaded.')
+    // @refs: https://stackoverflow.com/q/6566545/55075
     browser.webRequest.onHeadersReceived.addListener(async function(details){
         log('Got a request for ${details.url} with ID ${details.requestId}.')
 
