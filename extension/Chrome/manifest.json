@@ -32,7 +32,9 @@
     "permissions": [
         "storage",
         "activeTab",
-        "notifications"
+        "notifications",
+        "webRequest",
+        "webRequestBlocking"
     ],
     "version": "1.0",
     "web_accessible_resources": [
