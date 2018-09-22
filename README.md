@@ -32,12 +32,25 @@ The app is storing and managing the certificates by using EOS blockchain, making
 
 By implementing it using EOS blockchain, a network capable of processing millions of transactions per second, our app can be highly scalable.
 
+### Business model
+
+Our business model is not about earning the money, but helping people not losing them.
+
+### Use cases
+
+This app protects users from entering suspicious websites such as phishing, scam or infected with viruses, despite having valid certificates, as valid issued certificate does not guarantee its content.
+
+Few examples:
+
+- [Fake Telegram ICO fundraising](https://ico-telegram.org/#features)
+- [This spoof Apple site illustrates the sophistication of today’s phishing attacks](https://9to5mac.com/2017/04/20/how-to-spot-a-phishing-attempt-fake-apple-site/)
+
 ## Installation
 
 The protection can be enabled on any computer, tablet or a smart phone supporting a web browser, by installing an extension.
 
 Steps to install extension:
 1. Download the project.
-2. Go to `chrome://extensions` (Chrome or Opera).
+2. Go to `chrome://extensions` (Chrome, Firefox or Opera).
 3. Select _Developer mode_, and _Load unpacked extension..._
 4. Choose `extension/Chrome` folder of that project.
