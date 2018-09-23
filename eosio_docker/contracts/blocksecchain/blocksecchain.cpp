@@ -4,78 +4,74 @@ using namespace eosio;
 
 // Smart Contract Name: blocksecchain
 // Table struct:
-//   notestruct: multi index table to store the notes
+//   certstruct: multi index table to store the certificates
 //     prim_key(uint64): primary key
-//     user(account_name/uint64): account name for the user
-//     note(string): the note message
+//     fingerprint: the certificate fingerprint
+//     grade : the certificate grading (votes)
 //     timestamp(uint64): the store the last update block time
 // Public method:
-//   isnewuser => to check if the given account name has note in table or not
+//   isnewcert => to check if the given fingerprint has certificate in table or not
 // Public actions:
-//   update => put the note into the multi-index table and sign by the given account
+//   gradeCert => put the certificate into the multi-index table and sign by the given account
 
 // Replace the contract class name when you start your own project
 class blocksecchain : public eosio::contract {
   private:
-    bool isnewuser( account_name user ) {
-      notetable noteobj(_self, _self);
-      // get object by secordary key
-      auto notes = noteobj.get_index<N(getbyuser)>();
-      auto note = notes.find(user);
+    bool isnewcert( idx256 fingerprint ) {
+      certtable certobj(_self, _self);
+      // get object by secondary key
+      auto certificates = certobj.get_index<N(getbyfingerprint)>();
+      auto cert = certificates.find(fingerprint);
 
-      return note == notes.end();
+      return cert == certificates.end();
     }
 
     /// @abi table
-    struct notestruct {
-      uint64_t      prim_key;  // primary key
-      account_name  user;      // account name for the user
-      std::string   note;      // the note message
-      uint64_t      timestamp; // the store the last update block time
-
+    struct certstruct {
+      uint64_t      prim_key;        // primary key
+      idx256        fingerprint;     // the certificate fingerprint
+      uint64_t      timestamp;       // the store the last update block time
+      int32_t       grade;           // grading of the certificate (votes)
       // primary key
       auto primary_key() const { return prim_key; }
       // secondary key: user
-      account_name get_by_user() const { return user; }
+      idx256 get_by_fingerprint() const { return fingerprint; }
     };
 
     // create a multi-index table and support secondary key
-    typedef eosio::multi_index< N(notestruct), notestruct,
-      indexed_by< N(getbyuser), const_mem_fun<notestruct, account_name, &notestruct::get_by_user> >
-      > notetable;
+    typedef eosio::multi_index< N(certstruct), certstruct,
+      indexed_by< N(getbyfingerprint), const_mem_fun<certstruct, account_name, &certstruct::get_by_fingerprint> >
+      > certtable;
 
   public:
     using contract::contract;
 
     /// @abi action
-    void update( account_name _user, std::string& _note ) {
-      // to sign the action with the given account
-      require_auth( _user );
+    void gradeCert(idx256 _fingerprint, int32_t gradeDelta) {
+      
+      certtable obj(_self, _self); // code, scope
 
-      notetable obj(_self, _self); // code, scope
-
-      // create new / update note depends whether the user account exist or not
-      if (isnewuser(_user)) {
-        // insert object
+      // create new / update certificate
+      if (isnewcert(_fingerprint)) {
+        // insert new certificate
         obj.emplace( _self, [&]( auto& address ) {
           address.prim_key    = obj.available_primary_key();
-          address.user        = _user;
-          address.note        = _note;
+          address.fingerprint = _fingerprint;
+          address.grade        = gradeDelta;
           address.timestamp   = now();
         });
       } else {
-        // get object by secordary key
-        auto notes = obj.get_index<N(getbyuser)>();
-        auto &note = notes.get(_user);
-        // update object
-        obj.modify( note, _self, [&]( auto& address ) {
-          address.note        = _note;
+        // get object by secondary key
+        auto certs = obj.get_index<N(getbyfingerprint)>();
+        auto &cert = certs.get(_fingerprint);
+        // update certificate grading
+        obj.modify( cert, _self, [&]( auto& address ) {
+          address.grade        += gradeDelta;
           address.timestamp   = now();
         });
       }
     }
-
 };
 
-// specify the contract name, and export a public action: update
-EOSIO_ABI( blocksecchain, (update) )
+// specify the contract name, and export a public action: gradeCert
+EOSIO_ABI( blocksecchain, (gradeCert) )
