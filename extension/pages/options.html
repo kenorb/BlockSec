@@ -12,6 +12,11 @@ Favorite color:
 -->
 <br>
 <label>
+<div>Warning threshold (in %):</div>
+<input id="threshold" class="input" form="percent" value="50"\>
+</label>
+<br>
+<label>
 <div>Whitelist:</div>
 <textarea id="whitelist" class="textarea" rows="8" cols="50" placeholder="Type whitelist patterns in separate lines...">
 </textarea>
@@ -25,11 +30,10 @@ Favorite color:
 <label>
 <div>Custom EOSIO endpoint:</div>
 <input id="endpoint" class="input" placeholder="E.g. http://127.0.0.1:8888/">
-</textarea>
 </label>
 <br>
 <label>
-  <input id="testnet" type="checkbox" id="testnet">
+  <input id="testnet" type="checkbox" id="testnet"\>
   Use testnet
 </label>
 

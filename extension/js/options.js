@@ -5,11 +5,13 @@
 // Saves options to chrome.storage
 function save_options() {
   var isTestnet = document.getElementById('testnet').checked;
+  var threshold = document.getElementById('threshold').value;
   var endpoint = document.getElementById('endpoint').value;
   var whiteList = document.getElementById('whitelist').value;
   var blackList = document.getElementById('blacklist').value;
   chrome.storage.sync.set({
     isTestnet: isTestnet,
+    threshold: threshold,
     endpoint: endpoint,
     whiteList: whiteList,
     blackList: blackList,
@@ -29,10 +31,12 @@ function restore_options() {
   // Use default value color = 'red' and isTestnet = true.
   chrome.storage.sync.get({
     isTestnet: true,
+    threshold: 50,
     endpoint: "",
     whiteList: "",
     blackList: "",
   }, function(items) {
+    document.getElementById('threshold').value = items.threshold;
     document.getElementById('endpoint').value = items.endpoint;
     document.getElementById('whiteList').value = items.whiteList;
     document.getElementById('blackList').value = items.blackList;
