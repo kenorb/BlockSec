@@ -1,23 +1,31 @@
 <!doctype html>
 <html style="width:400px; height:400px;">
   <head>
+    <link href="../css/styles-popup.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-    <link href="../css/styles-popup.css" rel="stylesheet">
+    <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/ui.js" type="text/javascript" charset="utf-8"></script>
     <title>BlockSec</title>
   </head>
   <body style="width:400px; height:400px;">
-    <div>Blockchain: <code>active</code>.</div>
-    <div>Current EOS.io Public key: <code>EOS5UJuKQbmfzizeDXNikPbeCwYBpAq1vUUBuf7seJEpCoLzaUt4k</code></div>
-    <ul>
-    <li><a href="#">Generate new EOS wallet</a></li>
-    <li><a href="#">Import existing EOS wallet</a></li>
-    <li><a href="#">Export EOS wallet</a></li>
-    </ul>
-    <div id="messages"></div>
-    <div id="app-content"></div>
-    <div class="spam" onclick="reportAsSpam()"><img id="spam" src="../images/spam.png" title="Report site as spam" width="100px" height="100px"></div>
-    <div class="love" onclick="reportAsSafe()"><img id="love" src="../images/love.png" title="Report site as safe" width="100px" height="100px"></div>
+    <div id="connection">
+      <img id="terminal" src="../images/terminal.gif" width="400px"\>
+      <div class="connecting">Connecting to blockchain, please wait...</div>
+    </div>
+    <div id="app-content">
+      <div>Blockchain: <code>active</code>.</div>
+      <div>Current EOS.io Public key: <code>EOS5UJuKQbmfzizeDXNikPbeCwYBpAq1vUUBuf7seJEpCoLzaUt4k</code></div>
+      <ul>
+      <li><a href="#">Generate new EOS wallet</a></li>
+      <li><a href="#">Import existing EOS wallet</a></li>
+      <li><a href="#">Export EOS wallet</a></li>
+      </ul>
+      <div id="messages"></div>
+    </div>
+    <div id="app-buttons">
+      <div class="spam" onclick="reportAsSpam()"><img id="spam" src="../images/spam.png" title="Report site as spam" width="100px" height="100px"\></div>
+      <div class="love" onclick="reportAsSafe()"><img id="love" src="../images/love.png" title="Report site as safe" width="100px" height="100px"\></div>
+    </div>
   </body>
 </html>
