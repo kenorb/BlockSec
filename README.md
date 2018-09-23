@@ -10,9 +10,9 @@ The goal of this project is to protect users from the fraudulent sites (such as 
 
 ### Usage of the blockchain
 
-The list of the public certificates is created and voted by the users using a voting widget, which is managed by EOS blockchain.
+The list of the public certificates is created and voted by the users using a voting widget, which is stored and managed by EOS blockchain.
 
-This way, such blacklist is flexible by being decentralized and dynamic.
+Using this method, the blacklisting process is flexible by being decentralized, in comparison to long hardcoded list which are quickly get outdated and difficult to maintain.
 
 ### Innovation & Creativity
 
@@ -37,6 +37,12 @@ By implementing it using EOS blockchain, a network capable of processing million
 ### Business model
 
 Our business model is not about earning the money, but helping people not losing them.
+
+However, there are many ways where both parties can benefit. The scam market is a very huge and serious matter. Every day hundred of people get scammed around the world for unbelievable large amount of money, and due to lack of awareness and knowledge, they don't know how to protect from the criminals, so their money get lost forever.
+
+However not many people are aware that most of the lost funds sent to scammers can be actually recovered by a law firm specialising in litigation. They can help with diligence report on target company, legal documentation, out-of court settlement or any other statutory legislation applicable in your own country. They can also give you an advice whether you may be entitled to claim a chargeback from your bank.
+
+So by posting educational resources and selling the legal adverts on our warning pages (such as banners of trusted law firms dealing with scammers professionally), both parties can hugely benefit.
 
 ### Use cases
 
