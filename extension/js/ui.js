@@ -8,12 +8,24 @@ async function start () {
 // Report site as safe.
 function reportAsSafe() {
     var currentUrl = window.location.href
-    console.log("Safe!");
+    disableButtons();
+    showChart();
+    console.log("Site reported as safe!");
 }
 // Report site as spam.
 function reportAsSpam() {
     var currentUrl = window.location.href
-    console.log("Spam!");
+    disableButtons();
+    showChart();
+    console.log("Site reported as spam!");
+}
+// Show result chart.
+function showChart() {
+  $('#app-chart').css('display','block')
+}
+// Disable buttons.
+function disableButtons() {
+  $('#app-buttons').css('opacity','0.4')
 }
 setTimeout(function() {
   $('#connection').css('display','none')

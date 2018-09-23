@@ -25,6 +25,10 @@ body {
     transform: translateX(10px) translateY(10px);
     transition: 0;
 }
+.not-clickable {
+    opacity: 0.4;
+    cursor: auto;
+}
 .connecting {
     color: white;
     font-size: 18px;
@@ -39,4 +43,9 @@ body {
 #app-buttons {
     opacity: 0.4;
     filter: alpha(opacity=40); /* msie */
+}
+#app-chart {
+    display: none;
+    position: absolute;
+    top: 150px;
 }
