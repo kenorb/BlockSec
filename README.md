@@ -2,6 +2,8 @@
 
 Overview about projects created during the EOS Hackathon in London on 22/23 September 2018
 
+![logo](extension/images/logo.png)
+
 ## Brief
 
 The goal of this project is to protect users from the fraudulent sites (such as phishing or spam websites). This works by checking the site certificate againt blacklisted on the EOS blockchain.
