@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head><title>My Test Extension Options</title></head>
+<head><title>BlockSec Extension Options</title></head>
 <body>
-
+<h2>BlockSec options</h2>
+<!--
 Favorite color:
-<select id="color">
- <option value="red">red</option>
- <option value="green">green</option>
- <option value="blue">blue</option>
- <option value="yellow">yellow</option>
+<select id="options">
+ <option value="option-1">option-1</option>
+ <option value="option-2">option-2</option>
 </select>
-
+-->
+<br>
 <label>
-  <input type="checkbox" id="like">
-  I like colors.
+<div>Whitelist:</div>
+<textarea id="whitelist" class="textarea" rows="8" cols="50" placeholder="Type whitelist patterns in separate lines...">
+</textarea>
+</label>
+<label>
+<div>Blacklist:</div>
+<textarea id="blacklist" class="textarea" rows="8" cols="50" placeholder="Type blacklist patterns in separate lines...">
+</textarea>
+</label>
+<br>
+<label>
+<div>Custom EOSIO endpoint:</div>
+<input id="endpoint" class="input" placeholder="E.g. http://127.0.0.1:8888/">
+</textarea>
+</label>
+<br>
+<label>
+  <input id="testnet" type="checkbox" id="testnet">
+  Use testnet
 </label>
 
 <div id="status"></div>

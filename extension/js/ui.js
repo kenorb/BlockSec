@@ -10,14 +10,14 @@ function reportAsSafe() {
     var currentUrl = window.location.href
     disableButtons();
     showChart();
-    console.log("Site reported as safe!");
+    console.log("Certificate reported as safe!");
 }
 // Report site as spam.
 function reportAsSpam() {
     var currentUrl = window.location.href
     disableButtons();
     showChart();
-    console.log("Site reported as spam!");
+    console.log("Certificate reported as spam!");
 }
 // Show result chart.
 function showChart() {

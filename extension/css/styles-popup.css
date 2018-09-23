@@ -49,3 +49,9 @@ body {
     position: absolute;
     top: 150px;
 }
+#app-logo {
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    opacity: 0.3;
+}
