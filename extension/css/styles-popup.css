@@ -1,3 +1,27 @@
+a {
+    color: green;
+}
 body {
     background-image: url("../images/background.jpg");
+    box-shadow: inset 0 0 400px #666;
+}
+#spam {
+    position: absolute;
+    top: 280px;
+    left: 280px;
+}
+#love {
+    position: absolute;
+    top: 280px;
+    left: 20px;
+}
+#spam:hover, #love:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    height: 120px;
+    width: auto;
+}
+#spam:active, #love:active {
+    transform: translateX(10px) translateY(10px);
+    transition: 0;
 }
