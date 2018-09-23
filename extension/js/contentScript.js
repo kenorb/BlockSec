@@ -32,3 +32,12 @@ if (typeof browser !== "undefined") {
     }, ALL_SITES, extraInfoSpec)
     console.log('Added listener.')
 }
+
+document.addEventListener('keydown', function(event) {
+  if (event.code == 'KeyQ') {
+    alert('Undo!')
+  }
+});
+document.addEventListener("keydown", function(event) {
+  console.log(event.which);
+}

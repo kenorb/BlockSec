@@ -21,7 +21,7 @@ function reportAsSpam() {
 }
 // Show result chart.
 function showChart() {
-  $('#app-chart').css('display','block')
+    $('#app-chart').css('display','block')
 }
 // Disable buttons.
 function disableButtons() {
