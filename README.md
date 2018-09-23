@@ -8,11 +8,11 @@ Overview about projects created during the EOS Hackathon in London on 22/23 Sept
 
 The goal of this project is to protect users from the fraudulent sites (such as phishing or spam websites). This works by checking the site certificate againt blacklisted on the EOS blockchain.
 
-### Usage of the blockcin
+### Usage of the blockchain
 
-The list of the public certificates is created and voted by the users using a voting widget, which is managed by EOS blockchain.
+The list of the public certificates is created and voted by the users using a voting widget, which is stored and managed by EOS blockchain.
 
-This way, such blacklist is flexible by being decentralized and dynamic.
+Using this method, the blacklisting process is flexible by being decentralized, in comparison to long hardcoded list which are quickly get outdated and difficult to maintain.
 
 ### Innovation & Creativity
 
